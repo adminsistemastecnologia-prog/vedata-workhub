@@ -7,7 +7,7 @@
     <groupId>com.vedata</groupId>
     <artifactId>vedata-workhub</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Vedata WorkHub - Sistema de Gestão de Projetos</name>
 
     <parent>
