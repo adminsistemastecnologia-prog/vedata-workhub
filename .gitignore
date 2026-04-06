@@ -72,3 +72,11 @@ tmp/
 .github/java-upgrade/
 .instructions.md
 compile_errors.txt
+
+# Builds estáticos antigos
+backend/src/main/resources/static/assets/index-BAy8teib.css
+backend/src/main/resources/static/assets/index-Bym7FUSu.js
+backend/src/main/resources/static/assets/index-Bym7FUSu.js.map
+
+# Binários do Node — nunca versionar
+frontend/node/
