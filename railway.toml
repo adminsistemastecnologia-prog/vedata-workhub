@@ -1,6 +1,6 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "cd backend && mvn clean package -DskipTests && cp backend/target/vedata-workhub-1.0.0.jar app.jar"
+buildCommand = "cd backend && mvn clean package -DskipTests && cp target/vedata-workhub-1.0.0.jar ../app.jar"
 
 [deploy]
 startCommand = "java -jar app.jar"
