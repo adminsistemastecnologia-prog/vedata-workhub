@@ -1,0 +1,90 @@
+spring:
+  application:
+    name: Vedata WorkHub - Sistema de Gestão de Projetos
+
+  # ============================================
+  # Banco de Dados - H2 In-Memory (Desenvolvimento)
+  # ============================================
+  datasource:
+    url: jdbc:h2:mem:vedatadb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      auto-commit: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  # ============================================
+  # JPA / Hibernate
+  # ============================================
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  # ============================================
+  # Multipart (Upload de arquivos)
+  # ============================================
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  # ============================================
+  # Spring MVC (Movido para cá para evitar duplicidade)
+  # ============================================
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+# ============================================
+# Segurança / JWT
+# ============================================
+app:
+  jwt:
+    secret: ${JWT_SECRET:vedataworkhub-development-secret-key-change-in-production-12345}
+    expiration: 86400000
+
+# ============================================
+# Logging
+# ============================================
+logging:
+  level:
+    root: INFO
+    com.vedata.workhub: DEBUG
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/workhub.log
+    max-size: 10MB
+    max-history: 10
+
+# ============================================
+# Servidor
+# ============================================
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param

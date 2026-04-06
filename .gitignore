@@ -1,0 +1,74 @@
+# ============================================
+# IDE
+# ============================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================
+# Build — Java / Maven
+# ============================================
+target/
+out/
+*.class
+*.jar
+*.war
+.m2/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.orig
+release.properties
+
+# ============================================
+# Build — Node / Frontend
+# ============================================
+node_modules/
+npm-debug.log
+yarn-error.log
+frontend/dist/
+frontend/dist-ssr/
+
+# ============================================
+# Arquivos gerados pelo compilador TypeScript
+# ============================================
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# ============================================
+# Variáveis de ambiente e credenciais — NUNCA versionar
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.production.local
+*.pem
+*.key
+*.p12
+
+# Configurações com credenciais reais
+application-local.yml
+application-local.properties
+application-supabase.yml
+application.properties
+
+# ============================================
+# Logs e temporários
+# ============================================
+logs/
+*.log
+*.tmp
+temp/
+tmp/
+
+# ============================================
+# Artefatos de ferramentas internas — não versionar
+# ============================================
+.github/java-upgrade/
+.instructions.md
+compile_errors.txt

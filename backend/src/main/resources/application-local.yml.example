@@ -1,0 +1,74 @@
+spring:
+  application:
+    name: TaskFlow - Sistema de Gestão de Projetos
+  
+  # ============================================
+  # Servidor (Local)
+  # ============================================
+  server:
+    port: 8080
+    servlet:
+      context-path: /
+
+  # ============================================
+  # Banco de Dados - Supabase (PostgreSQL)
+  # 
+  # INSTRUÇÕES PARA NOVOS USUÁRIOS:
+  # ================================
+  # 1. Copie este arquivo: application-local.yml.example → application-local.yml
+  # 2. Substitua os valores abaixo com seus dados do Supabase:
+  #    - {SEU_DB_HOST}: encontre em Supabase > Settings > Databases > Connection info
+  #    - {SEU_DB_PORT}: porta do Supabase (geralmente 5432)
+  #    - {SEU_DB_NAME}: nome do banco (geralmente "postgres")
+  #    - {SEU_DB_USER}: usuário (ex: postgres.seu_project_id)
+  #    - {SEU_DB_PASSWORD}: senha que você configurou no Supabase
+  # 3. Execute: mvn clean spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=local"
+  #
+  # IMPORTANTE: Nunca committe o arquivo application-local.yml no Git!
+  # Está protegido por .gitignore
+  # ============================================
+  datasource:
+    url: jdbc:postgresql://{SEU_DB_HOST}:{SEU_DB_PORT}/{SEU_DB_NAME}?sslmode=require
+    username: {SEU_DB_USER}
+    password: {SEU_DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    
+    # Pool de conexões HikariCP (Supabase recomenda 5-10 conexões)
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      auto-commit: true
+
+  # ============================================
+  # JPA / Hibernate
+  # ============================================
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+  # ============================================
+  # Thymeleaf
+  # ============================================
+  thymeleaf:
+    cache: false
+
+# ============================================
+# Logging (Desenvolvimento)
+# ============================================
+logging:
+  level:
+    root: INFO
+    com.taskflow: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate: WARN

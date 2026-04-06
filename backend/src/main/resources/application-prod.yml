@@ -1,0 +1,42 @@
+# ============================================
+# Configuração PRODUÇÃO
+# ============================================
+# Este arquivo é usado em ambiente de produção
+# Todas as credenciais devem vir de variáveis de ambiente
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:10}
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate  # NÃO permitir mudanças automáticas em produção
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+
+logging:
+  level:
+    root: WARN
+    com.taskflow: INFO
+    org.postgresql: WARN
+    org.hibernate.SQL: WARN
+  file:
+    name: logs/taskflow-prod.log
+    max-size: 50MB
+    max-history: 30
+
+server:
+  compression:
+    enabled: true
+    min-response-size: 1024
+  http2:
+    enabled: true
