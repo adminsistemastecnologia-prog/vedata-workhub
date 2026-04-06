@@ -1,6 +1,6 @@
-# 🚀 TaskFlow Quick Start Guide
+# 🚀 Vedata WorkHub: Quick Start Guide
 
-Bem-vindo ao TaskFlow! Este documento combina instruções rápidas, configuração local e troubleshooting.
+Bem-vindo ao Vedata WorkHub! Este documento combina instruções rápidas, configuração local e troubleshooting.
 
 ---
 
@@ -265,46 +265,8 @@ src/main/resources/
 └── logback-spring.xml              # Logging config
 ```
 
----
 
-## 🎯 Próximos Passos
 
-- 📖 Veja [README.md](README.md) para visão geral da arquitetura
-- 🔗 Configure seu IDE para hot-reload (DevTools já habilitado)
-- 🗄️ Crie um novo projeto via UI após login
-- 📝 Leia comments em `SecurityConfig.java` para entender autenticação
-
-**Dúvidas?** Consulte seção de Troubleshooting acima ou abra uma issue.
-mvn: command not found
-```
-→ Precisa reinstalar Maven ou Java
-
-### Terminal 2 mostra erro de npm
-```
-npm: command not found
-```
-→ Precisa reinstalar Node.js
-
-### Terminal 2 mostra "Port already in use"
-```
-EADDRINUSE: address already in use :::5173
-```
-→ Execute:
-```powershell
-netstat -ano | findstr "5173"
-taskkill /PID <número> /F
-npm run dev
-```
-
-### Navegador mostra "Cannot connect"
-→ Verifique:
-1. Terminal 1: Backend rodando? (viu "Tomcat started"?)
-2. Terminal 2: Frontend rodando? (viu "VITE ready"?)
-3. URL correta? (http://localhost:5173)
-
----
-
-## 📞 Precisa de Ajuda?
 
 Se nenhum dos passos acima funcionar, me envie:
 1. Screenshot do erro
