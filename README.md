@@ -1,9 +1,9 @@
-# Vedata WorkHub — Sistema de Gestão de Projetos e Tarefas
+# Vedata WorkHub: Sistema de Gerenciador de Tarefas
 
 > **Vedata WorkHub** é uma solução web exclusiva e robusta para gerenciamento de projetos e tarefas, desenvolvida para uso interno da empresa. O sistema utiliza uma arquitetura moderna com **Spring Boot** no backend e uma integração fluida com o **Supabase** (PostgreSQL) para persistência de dados.
 
 ## 🎯 Objetivo do Projeto
-O objetivo deste projeto é fornecer uma plataforma centralizada e privada para a gestão ágil de tarefas, permitindo que a equipe organize seus fluxos de trabalho através de um **Board Kanban** interativo, acompanhe o progresso de projetos e gerencie as demandas internas de forma eficiente.
+O objetivo geral deste projeto foi desenvolver um Sistema Gerenciador de Tarefas robusto e intuitivo, visando otimizar os processos internos da empresa Vedata. Especificamente, buscou-se criar uma plataforma que centralizasse as informações dos projetos, facilitasse a atribuição e o acompanhamento de prioridades, e fornecesse um repositório único para a consulta de dados relevantes, mitigando os desafios identificados na gestão de seus diversos escopos de trabalho.
 
 ---
 
