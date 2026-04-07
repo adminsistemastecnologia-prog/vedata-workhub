@@ -7,7 +7,15 @@ O objetivo geral deste projeto foi desenvolver um Sistema Gerenciador de Tarefas
 
 ---
 
-## ⚡ Configuração e Execução
+## 🌐 Produção (Acesso Online)
+O sistema está atualmente hospedado e funcional nos seguintes endereços:
+
+*   **Frontend Aplicado:** [https://vedata-workhub.web.app](https://vedata-workhub.web.app)
+*   **Backend (API):** `https://vedata-workhub-79983006715.us-central1.run.app`
+
+---
+
+## ⚡ Configuração e Execução Local
 
 ### 1. Banco de Dados (Supabase)
 O projeto está configurado para utilizar o Supabase como banco de dados principal.
@@ -15,14 +23,14 @@ O projeto está configurado para utilizar o Supabase como banco de dados princip
 2.  **Schema:** Execute o script `backend/sql/schema.sql` no SQL Editor do seu projeto Supabase para criar as tabelas e o usuário único.
 
 ### 2. Configuração do Backend
-As configurações de conexão estão localizadas em `backend/src/main/resources/application.yml`. Certifique-se de definir a variável de ambiente `JWT_SECRET` ou utilizar o valor padrão configurado para desenvolvimento.
+As configurações de conexão estão localizadas em `backend/src/main/resources/application.yml`. Certifique-se de configurar o arquivo `.env` na raiz conforme o `.env.example`.
 
 ### 3. Execução do Sistema
-Navegue até a pasta raiz e execute:
+Navegue até a pasta raiz e execute o script orquestrador (PowerShell):
 ```bash
-mvn spring-boot:run
+./run-dev-servers.ps1
 ```
-O sistema estará disponível em: [http://localhost:8080](http://localhost:8080)
+Esse script levantará o **Backend (8080)** e o **Frontend (5173)** em janelas separadas automaticamente.
 
 ---
 
