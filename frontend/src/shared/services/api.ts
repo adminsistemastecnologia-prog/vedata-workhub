@@ -8,7 +8,7 @@ import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios'
 // Usar URL absoluta 'http://localhost:8080' bypassava o proxy do Vite e causava
 // problemas de CORS em desenvolvimento.
 const instance: AxiosInstance = axios.create({
-  baseURL: '',
+  baseURL: import.meta.env.VITE_API_URL || '',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
